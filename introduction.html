@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Johnson | Introduction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles specific to introduction page */
+        .introduction-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 150px 0 80px;
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 50px;
+        }
+        
+        .profile-container {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            margin: 0 auto 25px;
+        }
+        
+        .introduction-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+        
+        .introduction-header .tagline {
+            font-size: 1.4rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        .social-links-header {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .social-links-header a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            color: white;
+            font-size: 1.3rem;
+            transition: var(--transition);
+        }
+        
+        .social-links-header a:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .introduction-content {
+            padding: 0 0 80px;
+        }
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .content-card {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+        }
+        
+        .content-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .content-card h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--light-gray);
+        }
+        
+        .content-card h2 i {
+            color: var(--accent-color);
+        }
+        
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+        
+        .skill-item {
+            background-color: var(--light-gray);
+            color: var(--secondary-color);
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+        
+        .skill-item:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .interests-list {
+            list-style: none;
+        }
+        
+        .interests-list li {
+            padding: 12px 0;
+            border-bottom: 1px solid var(--light-gray);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .interests-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .interests-list i {
+            color: var(--accent-color);
+            font-size: 1.2rem;
+            width: 25px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 0;
+        }
+        
+        .contact-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            width: 25px;
+        }
+        
+        .quote-section {
+            text-align: center;
+            padding: 40px;
+            background-color: var(--light-gray);
+            border-radius: var(--border-radius);
+            margin: 40px 0;
+        }
+        
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            color: var(--dark-color);
+        }
+        
+        .quote-author {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        .back-to-home {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .introduction-header h1 {
+                font-size: 2.3rem;
+            }
+            
+            .introduction-header .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .profile-img {
+                width: 160px;
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">AJ</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="introduction.html" class="active">Introduction</a></li>
+                <li><a href="index.html#portfolio">Portfolio</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Introduction Header -->
+    <header class="introduction-header">
+        <div class="container">
+            <div class="profile-container">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Alex Johnson" class="profile-img">
+            </div>
+            <h1>Alex Johnson</h1>
+            <p class="tagline">Full Stack Developer & Digital Creative with 5+ years of experience building responsive web applications</p>
+            
+            <div class="social-links-header">
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-codepen"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Introduction Content -->
+    <section class="introduction-content">
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-card">
+                    <h2><i class="fas fa-user"></i> About Me</h2>
+                    <div class="about-text">
+                        <p>Hello! I'm Alex, a passionate full-stack developer based in San Francisco. I specialize in creating dynamic, beautiful, and functional web applications that provide exceptional user experiences.</p>
+                        <br>
+                        <p>With a background in computer science and design, I bridge the gap between aesthetics and functionality. I believe in writing clean, efficient code and creating intuitive user interfaces.</p>
+                        <br>
+                        <p>When I'm not coding, you can find me hiking, reading tech blogs, or experimenting with new frameworks and technologies. I'm always eager to take on new challenges and collaborate on exciting projects.</p>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2><i class="fas fa-code"></i> Skills & Technologies</h2>
+                    <p>Here are some of the technologies and tools I work with:</p>
+                    <div class="skills-list">
+                        <span class="skill-item">JavaScript</span>
+                        <span class="skill-item">React</span>
+                        <span class="skill-item">Node.js</span>
+                        <span class="skill-item">Python</span>
+                        <span class="skill-item">HTML5/CSS3</span>
+                        <span class="skill-item">MongoDB</span>
+                        <span class="skill-item">PostgreSQL</span>
+                        <span class="skill-item">Git/GitHub</span>
+                        <span class="skill-item">Docker</span>
+                        <span class="skill-item">AWS</span>
+                        <span class="skill-item">Figma</span>
+                        <span class="skill-item">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2><i class="fas fa-briefcase"></i> Experience</h2>
+                    <div class="experience-item">
+                        <h3>Senior Web Developer</h3>
+                        <p class="company">TechSolutions Inc. | 2020 - Present</p>
+                        <p>Lead development of multiple client projects, manage a team of 4 developers, and implement modern web technologies to improve performance and user experience.</p>
+                    </div>
+                    <br>
+                    <div class="experience-item">
+                        <h3>Frontend Developer</h3>
+                        <p class="company">Digital Innovations Agency | 2018 - 2020</p>
+                        <p>Developed responsive websites and web applications for various clients, focusing on creating seamless user experiences across all devices.</p>
+                    </div>
+                    <br>
+                    <div class="experience-item">
+                        <h3>Junior Developer</h3>
+                        <p class="company">WebWorks Studio | 2017 - 2018</p>
+                        <p>Assisted in the development of WordPress websites and custom themes, gaining foundational experience in web development.</p>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+                    <div class="education-item">
+                        <h3>Bachelor of Science in Computer Science</h3>
+                        <p class="institution">Stanford University | 2013 - 2017</p>
+                        <p>Graduated with honors. Focused on software engineering, web technologies, and human-computer interaction.</p>
+                    </div>
+                    <br>
+                    <div class="education-item">
+                        <h3>Full Stack Web Development Certification</h3>
+                        <p class="institution">freeCodeCamp | 2018</p>
+                        <p>Completed comprehensive curriculum covering front-end and back-end technologies, databases, and deployment.</p>
+                    </div>
+                </div>
+
+                <div class="content-card">
+                    <h2><i class="fas fa-heart"></i> Interests</h2>
+                    <ul class="interests-list">
+                        <li><i class="fas fa-laptop-code"></i> Open Source Projects</li>
+                        <li><i class="fas fa-hiking"></i> Hiking & Outdoor Activities</li>
+                        <li><i class="fas fa-book"></i> Technology Books & Blogs</li>
+                        <li><i class="fas fa-music"></i> Playing Guitar</li>
+                        <li><i class="fas fa-plane"></i> Traveling & Photography</li>
+                        <li><i class="fas fa-utensils"></i> Cooking & Food Exploration</li>
+                        <li><i class="fas fa-gamepad"></i> Indie Video Games</li>
+                        <li><i class="fas fa-palette"></i> Digital Art & Design</li>
+                    </ul>
+                </div>
+
+                <div class="content-card">
+                    <h2><i class="fas fa-envelope"></i> Contact Me</h2>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email</strong>
+                                <p>alex.johnson@example.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone</strong>
+                                <p>+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <strong>Location</strong>
+                                <p>San Francisco, California</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-globe"></i>
+                            <div>
+                                <strong>Website</strong>
+                                <p>www.alexjohnson.dev</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons" style="margin-top: 25px;">
+                        <button class="btn btn-primary" id="contactBtn">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                        <a href="#" class="btn btn-secondary">
+                            <i class="fas fa-download"></i> Download Resume
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quote-section">
+                <p class="quote">"The web as I envisaged it, we have not seen it yet. The future is still so much bigger than the past."</p>
+                <p class="quote-author">- Tim Berners-Lee</p>
+            </div>
+
+            <div class="back-to-home">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h3>Alex Johnson</h3>
+                    <p>Full Stack Developer specializing in creating exceptional digital experiences</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-codepen"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="introduction.html">Introduction</a></li>
+                        <li><a href="index.html#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Info</h4>
+                    <p><i class="fas fa-envelope"></i> alex.johnson@example.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                    <p><i class="fas fa-map-marker-alt"></i> San Francisco, CA</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Alex Johnson. All rights reserved.</p>
+                <p>Designed with <i class="fas fa-heart"></i> and code</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Additional JavaScript for introduction page
+        document.getElementById('contactBtn').addEventListener('click', function() {
+            alert("Thank you for your interest! In a real implementation, this would open a contact form.");
+        });
+
+        // Add animation to skill items on hover
+        const skillItems = document.querySelectorAll('.skill-item');
+        skillItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
